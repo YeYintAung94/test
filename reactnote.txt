@@ -1,0 +1,10 @@
+React App တစ္ခုတည္ေဆာက္ဖို႔
+- root component လိုတယ္
+
+
+-state က handle လုပ္ဖို႔
+- state သံုးခ်င္ရင္ constructor ေခၚ
+
+-element ကို return ျပန္ရင္ root element တခုလိုတယ္
+-တနည္း အဆင့္တူ (သို႔) Level တူတဲ့ element ေတြကို အတူreturn ျပန္မရ
+-အဲလိုလုပ္ဖို႔ဆိုရင္ သူတို႔အေပၚကေန root element တခုနဲ႔ အုပ္ေပးရမယ္
