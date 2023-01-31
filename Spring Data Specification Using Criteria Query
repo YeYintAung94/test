@@ -6,6 +6,9 @@ Then, select root with CriteriaQuery
 Predicate by CriteriaBuilder
 Where clause by CriteriaQuery
 createQuery By EntityManager
+*********************************************
+*	Use Entity Manager		    *										
+*********************************************
 Sample code is following
 
 @PersistenceContext
