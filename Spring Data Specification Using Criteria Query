@@ -1,0 +1,35 @@
+Use EntityManager interface
+Create CriteriaBuilder using EntityManager 
+Create CriteriaQuery using CriteriaBuilder
+Create root object by CriteriaQuery
+Then, select root with CriteriaQuery
+Predicate by CriteriaBuilder
+Where clause by CriteriaQuery
+createQuery By EntityManager
+Sample code is following
+
+@PersistenceContext
+	private EntityManager entityManager;
+	
+	//select s from State s where s.region = region
+	public List<State> findByRegion(String region){
+		
+		//Create Criteria Builder
+		var criteriaBuilder=entityManager.getCriteriaBuilder();
+		
+		//Create Criteria Query
+		var criteriaQuery=criteriaBuilder.createQuery(State.class);
+		
+		//Create Root Object
+		var root=criteriaQuery.from(State.class);
+		
+		//select s from State s
+		criteriaQuery.select(root);
+		
+		var predicate=criteriaBuilder.equal(root.get("region"), region);
+		
+		//select s from State s where s.region = region
+		criteriaQuery.where(predicate);
+		
+		return entityManager.createQuery(criteriaQuery).getResultList();
+	}
