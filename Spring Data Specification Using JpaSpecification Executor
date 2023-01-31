@@ -1,0 +1,14 @@
+create interface extends JpaRepository,JpaSpecificationExecutor
+
+Using this interface , create criteria query
+
+Sample Code is following
+
+@Autowired
+	private StateRepo repo;
+	
+	public List<State> findByRegion(String region){	
+		Specification<State> specification=(root, query, criteriaBuilder) -> 
+		criteriaBuilder.equal(root.get("region"), region);
+		return repo.findAll(specification);
+	}
